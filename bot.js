@@ -34,16 +34,14 @@ const client = new Discord.Client({disableEveryone: true});
 
 const request = require('request');
 
-const prefix = '!'
+const prefix = 'D'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-	client.user.setGame(`الاتحاد العربي يرحب بكم .`,'https://www.twitch.tv/v5bz');
 });
 
 const config = {
-    token : "NTEyNTY1MzYyMDUxNjQ1NDYw.Ds7aKA.R4Fzfx-K6JPNWFD2dFgRMzrFfq4",
-    prefix : "!",
+    prefix : "D",
     owner : ['492552276326481930'],
 };
 //By Request of [ function ]
@@ -460,10 +458,10 @@ function play(guild, song, message) {
  
 
 client.on('message', message => {
-    if (message.content === '$help-music') {
+    if (message.content === 'Dhelp') {
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('**أوامر الميوزك**')
-        .setDescription('** ( $ ) برفكس البوت**')
+        .setDescription('** ( D ) برفكس البوت**')
         .addField('Play أوامر', '1.play    2.p    3.search    4.ply')
         .addField('Skip أوامر', '1.Skip    2.ski    3.s    4.sk')
         .addField('Stop أوامر', '1.Stop    2.st    3.sto')
