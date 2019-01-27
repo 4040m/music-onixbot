@@ -486,7 +486,7 @@ client.on('message', message => {
   client.user.setAvatar(argresult);
     message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
         } else    
-  if (message.content.startsWith(adminprefix + 'st')) {
+  if (message.content.startsWith(adminprefix + 'twitch')) {
     client.user.setGame(argresult, "https://www.twitch.tv/mohamedgamal");
       message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
   }
