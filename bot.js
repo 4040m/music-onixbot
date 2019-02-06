@@ -34,15 +34,15 @@ const client = new Discord.Client({disableEveryone: true});
 
 const request = require('request');
 
-const prefix = 'D'
+const prefix = 'N'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
 const config = {
-    prefix : "D",
-    owner : ['492552276326481930'],
+    prefix : "N",
+    owner : ['539287859878821897'],
 };
 //By Request of [ function ]
 var color = new Discord.RichEmbed().setColor('#000000').setColor('#36393e')
@@ -455,9 +455,9 @@ function play(guild, song, message) {
 	},10);
 }
 
- const devs = ["467777208732352512"]
+ const devs = ["539287859878821897"]
  
-const adminprefix = "D";
+const adminprefix = "N";
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!devs.includes(message.author.id)) return;
@@ -504,10 +504,10 @@ client.on('message', message => {
   });
 
 client.on('message', message => {
-    if (message.content === 'Dhelp') {
+    if (message.content === 'Nhelp') {
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('**أوامر الميوزك**')
-        .setDescription('** ( D ) برفكس البوت**')
+        .setDescription('** ( N ) برفكس البوت**')
         .addField('Play أوامر', '1.play    2.p    3.search    4.ply')
         .addField('Skip أوامر', '1.Skip    2.ski    3.s    4.sk')
         .addField('Stop أوامر', '1.Stop    2.st    3.sto')
