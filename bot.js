@@ -41,7 +41,7 @@ client.on('ready', () => {
 });
 
 const config = {
-    prefix : "N",
+    prefix : "D",
     owner : ['539287859878821897'],
 };
 //By Request of [ function ]
@@ -504,7 +504,7 @@ client.on('message', message => {
   });
 
 client.on('message', message => {
-    if (message.content === 'Nhelp') {
+    if (message.content === 'Dhelp') {
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('**أوامر الميوزك**')
         .setDescription('** ( N ) برفكس البوت**')
@@ -521,5 +521,11 @@ client.on('message', message => {
       message.channel.send(helpEmbed);
     }
 });
+
+client.on('message', message => {
+if (message.content === 'Hi~') {
+	message.channe.send(`https://discordapp.com/oauth2/authorize?client_id=538157077223440403&permissions=8&scope=bot`)
+	)
+}
 
 client.login(process.env.BOT_TOKEN);
