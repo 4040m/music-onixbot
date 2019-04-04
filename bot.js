@@ -34,7 +34,7 @@ const client = new Discord.Client({disableEveryone: true});
 
 const request = require('request');
 
-const prefix = 'N'
+const prefix = 'D'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -455,31 +455,53 @@ function play(guild, song, message) {
 	},10);
 }
 
- const devs = ["539287859878821897"]
+const devs = ["539287859878821897"]
  
-const adminprefix = "N";
+const adminprefix = "D";
 client.on('message', message => {
+  
+let em1 = client.guilds.get("540192448568229908").emojis.find(r => r.name === "09"); //wrong
+
+let em2 = client.guilds.get("540192448568229908").emojis.find(r => r.name === "08"); //right
+
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!devs.includes(message.author.id)) return;
      
   if (message.content.startsWith(adminprefix + 'ply')) {
     client.user.setGame(argresult);
-      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
+    var embed = new Discord.RichEmbed()
+    .setDescription(`${em2} | **تم جعل البلاينج : __${argresult}__ .**`)
+    if(!argresult) return  message.channel.send(`${em1} | **يرجا ادخال كلام** . `)
+      message.channel.sendEmbed(embed)
   } else
     if (message.content === (adminprefix + "Percie")) {
+      message.channel.sendEmbed(`${em2} | **تم الخروج من السيرفرات كله**`)
+      message.channel.sendEmbed(embed)
     message.guild.leave();        
   } else  
   if (message.content.startsWith(adminprefix + 'wt')) {
   client.user.setActivity(argresult, {type:'WATCHING'});
-      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
+  var embeed = new Discord.RichEmbed()
+  .setDescription(`${em2} | **تم جعل الوتشينق : __${argresult}__ .**`)
+  if(!argresult) return  message.channel.send(`${em1} | **يرجا ادخال كلام** . `)
+  message.channel.sendEmbed(embeed)
   } else
   if (message.content.startsWith(adminprefix + 'ls')) {
   client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
+  var embeeed = new Discord.RichEmbed()
+  .setDescription(`${em2} | **تم جعل الليسينينج : __${argresult}__ .**`)
+  if(!argresult) return  message.channel.send(`${em1} | **يرجا ادخال كلام** . `)
+  message.channel.sendEmbed(embeeed)
   } else    
     if (message.content.startsWith(adminprefix + 'setname')) {
   client.user.setUsername(argresult).then
-      message.channel.sendMessage(`**${argresult}** : Done :>`)
+  var embeeed = new Discord.RichEmbed()
+  .setDescription(`${em2} | **تم جعل الاسم : __${argresult}__ .**`)
+  if(!argresult) return  message.channel.send(`${em1} | **يرجا ادخال الاسم** . `)
+  message.channel.sendEmbed(embeeed)
+  var eembeed = new Discord.RichEmbed()
+  .setDescription(`${em2} | **تم جعل الصوره : __${argresult}__ .**`)
+  message.channel.sendEmbed(eembeed)
   return message.reply("**You Can't Change Your Name ,Only After Two Hours :>**");
   } else
     if (message.content.startsWith(adminprefix + 'setavatar')) {
@@ -488,17 +510,11 @@ client.on('message', message => {
         } else    
   if (message.content.startsWith(adminprefix + 'twitch')) {
     client.user.setGame(argresult, "https://www.twitch.tv/mohamedgamal");
-      message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
-  }
-    if(message.content === adminprefix + "restart") {
-      if (!devs.includes(message.author.id)) return;
-          message.channel.send(`:warning:️ **Bot restarting by ${message.author.username}**`);
-        console.log("\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        console.log(`⚠️ Bot restarting... ⚠️`);
-        console.log("===============================================\n\n");
-        client.destroy();
-        child_process.fork(__dirname + "/bot.js");
-        console.log(`Bot Successfully Restarted`);
+    var embeede = new Discord.RichEmbed()
+    .setDescription(`${em2} | **تم جعل الاستريم : __${argresult}__ .**`)
+    if(!argresult) return  message.channel.send(`${em1} | **يرجا ادخال كلام** . `)
+    message.channel.sendEmbed(embeede)
+
     }
  
   });
