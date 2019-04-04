@@ -522,10 +522,5 @@ client.on('message', message => {
     }
 });
 
-client.on('message', message => {
-if (message.content === 'Hi~') {
-	message.channe.send(`https://discordapp.com/oauth2/authorize?client_id=538157077223440403&permissions=8&scope=bot`)
-	)
-}
 
 client.login(process.env.BOT_TOKEN);
